@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <nav>
+        <h1>Payment Page</h1>
+    </nav>
+
+    <section class="payment-summary">
+        <h3>Order Summary</h3>
+        <p id="hotel-name">Hotel: Not Selected</p>
+        <p id="hotel-price">Price: ₹ 0</p>
+        <p id="hotel-description"></p>
+        <p id="total-price"></p>
+    </section>
+
+    <section class="visit-details">
+        <h3>Visit Details</h3>
+        <input type="text" id="visitorName" placeholder="Your Name" required>
+        <input type="email" id="visitorEmail" placeholder="Your Email" required>
+        <label for="fromDate">From:</label>
+        <input type="date" id="fromDate" required>
+        <label for="toDate">To:</label>
+        <input type="date" id="toDate" required>
+
+        <input type="number" id="noOfAdults" placeholder="Number of Adults" required>
+        <input type="number" id="noOfChildren" placeholder="Number of Children">
+        <input type="number" id="noOfRooms" placeholder="Total Number of Rooms" required>
+        <p id="calculatedDays"></p>
+        <button onclick="submitVisitDetails()">Next</button>
+    </section>
+
+    <section class="payment-options hidden">
+        <h3>Select Payment Method</h3>
+        <div class="payment-methods">
+            <div class="method" onclick="selectPaymentMethod('credit-card')">
+                <h4>
+                    <i class="fas fa-credit-card payment-icon"></i>
+                    Credit/Debit Card
+                </h4>
+            </div>
+            <div class="method" onclick="selectPaymentMethod('upi')">
+                <h4>
+                    <i class="fas fa-mobile-alt payment-icon"></i>
+                    UPI
+                </h4>
+            </div>
+            <div class="method" onclick="selectPaymentMethod('paypal')">
+                <h4>
+                    <i class="fab fa-paypal payment-icon"></i>
+                    PayPal
+                </h4>
+            </div>
+        </div>
+        <div id="payment-box" class="hidden"></div>
+    </section>
+    
+
+    <script src="payment.js"></script>
+</body>
+</html>
